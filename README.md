@@ -14,7 +14,7 @@ Start with
 ```php
 $api_key = 'xxxxxxxxx';
 $account_password = 'xxxxxxxx';
-$jvzoo_rest_api = new \nsanden\JVZooRestApi($api_key, $account_password);
+$jvzoo_rest_api = new \nsanden\JvzooRestApi($api_key, $account_password);
 ```
 Get recurring payment status
 ```php
