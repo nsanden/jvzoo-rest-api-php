@@ -1,6 +1,6 @@
 {
     "name": "nsanden/jvzoo-rest-api-php",
-    "description": "Small class to use with JVZoo Rest API",
+    "description": "You can use this class to interface with the JVZoo Rest API.",
     "require": {
         "php": ">=5.1.0"
     }
