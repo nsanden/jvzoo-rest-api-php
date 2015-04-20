@@ -1,0 +1,7 @@
+{
+    "name": "nsanden/jvzoo-rest-api-php",
+    "description": "Small class to use with JVZoo Rest API",
+    "require": {
+        "php": ">=5.1.0"
+    }
+}
