@@ -4,7 +4,9 @@ You can use this class to interface with the JVZoo Rest API.
 
 # Install (Composer)
 
-```composer require nsanden/jvzoo-rest-api-php:require-dev```
+```
+composer require nsanden/jvzoo-rest-api-php:require-dev
+```
 
 # Examples
 
