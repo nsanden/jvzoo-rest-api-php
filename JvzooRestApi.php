@@ -3,6 +3,11 @@
 /**
  * JVZoo Rest Api for PHP
  *
+ * You can use this class to interface with the JVZoo Rest API.
+ *
+ * JVZoo API Signup: https://www.jvzoo.com/myaccount/api
+ * API Documentation: http://api.jvzoo.com
+ *
  * @author Nate Sanden <natesanden@gmail.com>
  *
  * @link http://www.natesanden.com
@@ -25,7 +30,7 @@ class JvzooRestApi {
         $this->account_password = $account_password;
     }
 
-    protected function beginCurl($end_point)
+    public function beginCurl($end_point)
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, self::API_URL . $end_point);
