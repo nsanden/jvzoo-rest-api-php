@@ -3,5 +3,10 @@
     "description": "You can use this class to interface with the JVZoo Rest API.",
     "require": {
         "php": ">=5.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "nsanden\\jvzoo-rest-api-php\\": ""
+        }
     }
 }
