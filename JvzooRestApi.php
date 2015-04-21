@@ -15,7 +15,7 @@
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 
-namespace nsanden;
+namespace nsanden\jvzoo;
 
 class JvzooRestApi {
 
