@@ -1,6 +1,6 @@
-# Jvzoo Rest API (PHP)
+# Jvzoo REST API (PHP)
 
-You can use this class to interface with the JVZoo Rest API.
+You can use this class to interface with the JVZoo REST API.
 
 # Install (Composer)
 
