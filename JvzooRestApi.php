@@ -85,16 +85,25 @@ class JvzooRestApi {
 
     public function cancelRecurringPayment($pre_key)
     {
-        if(trim($pre_key) == '')
-        {
-            throw new \Exception('$pre_key must not be empty.');
+        $response = false;
+        if(trim($pre_key) != '') {
+            $ch = $this->beginCurl('/recurring_payment/PA-' . $pre_key);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+            curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+            $post_fields = http_build_query(['status' => 'CANCEL']);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
+            $response = $this->strip_tags_content($this->endCurl($ch));
+            $re = json_decode($response);
+            if ($re->results->canceled == 'false') {
+                //try again
+                $ch = $this->beginCurl('/recurring_payment/SR-' . $pre_key);
+                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+                curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+                $post_fields = http_build_query(['status' => 'CANCEL']);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
+                $response = $this->strip_tags_content($this->endCurl($ch));
+            }
         }
-        $ch = $this->beginCurl('/recurring_payment/' . $pre_key);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-        curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-        $post_fields = http_build_query(['status' => 'CANCEL']);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
-        $response = $this->endCurl($ch);
         return $response;
     }
 
